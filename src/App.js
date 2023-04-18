@@ -1,8 +1,9 @@
 import TipoEquipoComponents from './components/TipoEquipoComponents';
+import AppRouter from './ruoters/AppRouter';
 
 function App() {
   return (
-    <TipoEquipoComponents title={'Tipo de Equipo'}/> 
+    <AppRouter />
   );
 }
 

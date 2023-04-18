@@ -1,26 +1,28 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function NavBar() {
   return (
     <header className="p-3 text-bg-dark">
-    <div className="container">
-      <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-        </a>
-
-        <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" className="nav-link px-8 text-secondary">Inicio</a></li>
-          <li><a href="#" className="nav-link px-2 text-white">Estado EQuipos</a></li>
-          <li><a href="#" className="nav-link px-2 text-white">Marcas</a></li>
-          <li><a href="#" className="nav-link px-2 text-white">Usuarios</a></li>
-          <li><a href="#" className="nav-link px-2 text-white">Tipo EQuipos</a></li>
-          <li><a href="#" className="nav-link px-2 text-white">Inventario</a></li>
-        </ul>
-
-        <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-        </form>
-      </div>
-    </div>
-  </header>
+      <ul className="nav nav-pills">
+        <NavLink tabIndex={1} className='nav-item nav-link' to='/Equipo'>
+          Tipo Equipos
+        </NavLink>
+        <NavLink tabIndex={2} className='nav-link btn btn-dark' to='/Estados'>
+          Estado Equipos
+        </NavLink>
+        <NavLink tabIndex={3} className='nav-item nav-link' to='/Usuarios'>
+          Usuarios
+        </NavLink>
+        <NavLink tabIndex={4} className='nav-item nav-link' to='/Marcas'>
+          Marcas
+        </NavLink>
+        <NavLink tabIndex={5} className='nav-item nav-link' to='/Inventario'>
+          Inventario
+        </NavLink>
+      </ul>
+          <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          </form>
+    </header>
   )
 }
