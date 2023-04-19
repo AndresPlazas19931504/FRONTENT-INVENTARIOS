@@ -1,5 +1,13 @@
 import { axiosConfig } from "../configuration/axiosConfiguracion"
 
+const createUsuario = (data = {}) => {
+    return axiosConfig.post('usuario', data, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+}
+
 const getUsuario = (estado) => {
     return axiosConfig.get('usuario?estado='+estado, {
         headers: {
@@ -8,11 +16,25 @@ const getUsuario = (estado) => {
     })
 }
 
-const createUsuario = () => {
-    //implementarlo
+const updateUsuario = (idUsuario, data) => {
+    return axiosConfig.put('usuario/${idUsuario}', data, {} , {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+}
+
+const deleteUsuario = (idUsuario) => {
+    return axiosConfig.delete('usuario/${idUsuario}', {} , {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
 }
 
 export {
     getUsuario,
-    createUsuario
+    createUsuario,
+    updateUsuario,
+    deleteUsuario
 }
